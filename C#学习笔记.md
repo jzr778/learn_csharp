@@ -1,4 +1,4 @@
-### `IEnumerable<Movie>`
+### 1. `IEnumerable<Movie>`
 代码中的`public IEnumerable<Movie> GetAllProducts()`
 - 表示这个方法返回一个电影集合
 - 调用方可以遍历这些电影，但不能直接修改集合（除非强制转换）
@@ -33,7 +33,7 @@ private List<Movie> _movies = new List<Movie>
 };
 ```
 
-#### 1. 返回 `List<Movie>`
+#### 1.1 返回 `List<Movie>`
 
 ```csharp
 public List<Movie> GetMoviesAsList()
@@ -50,7 +50,7 @@ list.Clear();           // 可以清空集合
 
 **问题**：暴露了太多集合修改功能，可能意外修改内部数据
 
-#### 2. 返回 `Movie[]`
+#### 1.2 返回 `Movie[]`
 
 ```csharp
 public Movie[] GetMoviesAsArray()
@@ -66,7 +66,7 @@ array[0] = new Movie();  // 可以修改数组元素
 
 **问题**：数组长度固定，但仍暴露了元素修改能力
 
-#### 3. 返回 `IEnumerable<Movie>`
+#### 1.3 返回 `IEnumerable<Movie>`
 
 ```csharp
 public IEnumerable<Movie> GetMoviesAsEnumerable()
